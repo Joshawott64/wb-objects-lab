@@ -353,6 +353,9 @@ const cat = {
 let grumpyActivity;
 let fluffy2ndFriend;
 
+grumpyActivity = cat.catFriends[0].activities[1]
+fluffy2ndFriend = cat.catFriends[1].name
+
 /// ////////////// PROBLEM 17 ///////////////////
 
 // Do not edit the code below.
@@ -389,7 +392,11 @@ const myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+function recordCleaner() {
+  for (let i = 0; i < myCar.accidents.length; i++) {
+    myCar.accidents[i].atFaultForAccident = false
+  }
+}
 
 /// ////////////// PROBLEM 18 ///////////////////
 
@@ -407,7 +414,17 @@ const myCar = {
   Find the smallest number of the three and return that number.
 */
 
-//Code Here
+function largeNumbers(destructeredObject) {
+  let smallestNum = Infinity
+
+  for (let prop in destructeredObject) {
+    if (destructeredObject[prop] < smallestNum) {
+      smallestNum = destructeredObject[prop]
+    }
+  }
+
+  return smallestNum
+}
 
 /// ////////////// PROBLEM 19 ///////////////////
 
@@ -417,4 +434,14 @@ const myCar = {
   Find the longest array and return that array.
 */
 
-//Code Here
+function numberGroups(destructeredObject) {
+  let longestArray = []
+
+  for (let prop in destructeredObject) {
+    if (destructeredObject[prop].length > longestArray.length) {
+      longestArray = destructeredObject[prop]
+    }
+  }
+
+  return longestArray
+}
